@@ -19,7 +19,6 @@ var pie = {
   bakeTemp: "350 degrees",
   bakeTime: "75 minutes",
   customer: "Tammy",
-  decorate: cake.decorate.bind(pie)
 }
 
 function makeCake() {
@@ -29,6 +28,7 @@ function makeCake() {
 
 function makePie() {
   var updatePieStatus = updateStatus.bind(this);
+  pie.decorate = cake.decorate.bind(pie)
   mix.call(pie, updatePieStatus)
 }
 
